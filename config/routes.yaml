@@ -1,3 +1,0 @@
-sf_import:
-  resource: '@NewageerpSfImportBundle/Controller'
-  type:     annotation
