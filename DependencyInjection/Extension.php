@@ -24,6 +24,7 @@ class Extension extends ConfigurableExtension
     {
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../config'));
         $loader->load('services.yaml');
+        $loader->load('routes/annotations.yaml');
     }
 
 
