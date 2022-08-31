@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use OpenApi\Annotations as OA;
+use Newageerp\SfSocket\Service\SocketService;
 
 /**
  * @Route(path="/app/nae-core/import")
@@ -21,9 +22,9 @@ class ImportController extends UControllerBase
 {
     protected array $letters = [];
 
-    public function __construct(EntityManagerInterface $em, EventDispatcherInterface $eventDispatcher)
+    public function __construct(EntityManagerInterface $em, EventDispatcherInterface $eventDispatcher, SocketService $socketService)
     {
-        parent::__construct($em, $eventDispatcher);
+        parent::__construct($em, $eventDispatcher, $socketService);
 
         $this->letters = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
     }
